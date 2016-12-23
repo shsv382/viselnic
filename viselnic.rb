@@ -25,7 +25,7 @@ class Game
 			puts "Шаг #{@step.to_s}"
 #			puts @word if $dev == 1				# Development mode
 			puts output
-			print "Ошибки(#{@mistake_count}): "
+			print "Ошибки(#{@mistakes.length}): "
 			print @mistakes.join(", ")
 			print "\n"
 			puts "Введите одну букву!"
@@ -93,6 +93,6 @@ puts "Добро пожаловать в игру 'Висельник'"
 
 new_game = Game.new
 
-puts "Вы можете ошибиться #{new_game.mistake_count} раз!"
+puts "Вы можете ошибиться #{new_game.mistake_count} раз#{"а" if (2..4).include?(new_game.mistake_count) }!"
 
 new_game.step
